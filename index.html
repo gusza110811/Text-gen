@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Text Generator - Gusza1108 Personal Webpage</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="centered" style="color: white;" id="main">
+        <button onclick="document.location.href = 'https://gusza110811.github.io'">Return to home</button>
+        <hr>
+        <h1>Text Generator</h1>
+        <p>A text generator that may or may not make sense</p>
+        <button onclick="Generate_text()">Generate a Sentence</button>
+        <p id="sentence">click the above button</p>
+    </div>
+
+    <div id="scripts">
+        <script>
+            function randint(min,max) {
+                return Math.floor(Math.random()*(max-min)) + min
+            }
+
+            function Generate_text() {
+                noun = ['person',
+                'man',
+                'woman',
+                'cow',
+                'egg',
+                'raccoon',
+                'fish',
+                'bird'
+
+                ]
+                verb = ['walks',
+                'runs',
+                'cries',
+                'flies',
+
+                ]
+                adj = ['good',
+                'bad',
+                'big',
+                'small',
+                'round'
+
+                ]
+
+                text = "The "
+
+                for (let index = 0; index < randint(0,3); index++) {
+                    text = text + " " + adj[randint(0,adj.length-1)]
+                    
+                }
+
+                text = text + " " + noun[randint(0,noun.length-1)]
+                text = text + " " + verb[randint(0,verb.length-1)]
+
+                document.getElementById("sentence").innerHTML = text
+            }
+        </script>
+    </div>
+</body>
+</html>
